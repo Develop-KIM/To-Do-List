@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
+</head>
+
+<body>
+  <div id="skip_navi">
+    <a href="#container">본문바로가기</a>
+  </div>
+  <div id="wrap">
+    <main id="container">
+      <div class="main_banner">
+        <h3 class="blind">메인 이미지</h3>
+        <div class="banner">
+          <div class="inner">
+            <div class="logo">
+              <h3>To do List</h3>
+            </div>
+            <div class="add_area">
+              <form>
+                <fieldset>
+                  <legend>추가</legend>
+                  <div class="add_wrap">
+                    <input class="user_input" type="text" placeholder="할 일을 추가해보세요." title="할 일을 추가해보세요."><button
+                      class="add_btn" type="button"><span class="blind">추가 버튼</span></button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="menu_wrap">
+              <ul class="menu_btn">
+                <li><button id="all" type="button">모두</button></li>
+                <li><button id="ongoing" type="button">진행</button></li>
+                <li><button id="done" type="button">완료</button></li>
+              </ul>
+              <div class="txt_area"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/ui-common.js?v=<?php echo time(); ?>"></script>
+</body>
+
+</html>

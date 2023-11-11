@@ -1,0 +1,48 @@
+:root {
+  /* 포인트컬러 */
+  --primary-color: #a69d8a;
+  --secondary-color: #bcb4a2;
+  /* 글자 공통 컬러 */
+  --text-color-100: #fff;
+  --text-color-400: #999;
+  --text-color-500: #666;
+  --text-color-600: #292929;
+  --text-color-900: #000;
+}
+
+.main_banner {height: 100%;}
+.main_banner .banner {height: 100vh; background: url(../images/banner.jpg) no-repeat center center / cover;}
+.main_banner .inner {max-width: 1440px; margin: 0 auto; background: rgba(0, 0, 0, 0.15) no-repeat 50% 50% / cover; height: 100%; padding: 0 20px; } 
+.main_banner .logo {text-align: center; padding-top: 20px;}
+.main_banner .logo h3 {color: var(--text-color-100); font-size: 44px;}
+.main_banner .add_area {max-width: 14; margin: 0 auto; text-align: center; margin-top: 20px;}
+.main_banner .add_wrap input {width:90%; height: 40px; border: none; padding: 10px;}
+.main_banner .add_wrap .add_btn {width: 50px; height: 40px; background: url(../images/add-icon\ 1.png) no-repeat 50% 50%; border: 1px solid #fff; margin-left: 20px;}
+.main_banner .menu_wrap {margin: 0 auto; margin-top: 20px; background: var(--text-color-100 );}
+.main_banner .menu_btn {display: flex;}
+.main_banner .menu_btn>li {width: calc(100% / 3); position: relative;}
+.main_banner .menu_btn>li>button {width: 100%; border: none; background: var(--text-color-100); color: var(--text-color-600); height: 30px; border-bottom: 1px solid var(--text-color-500);}
+.main_banner .menu_btn>li + li::before {content: ''; width: 1px; height: 30px; background: var(--text-color-500); position: absolute; left: 0; top: 0;}
+.main_banner .txt_wrap {display: flex; justify-content: space-between; padding: 0 15px;}
+.main_banner .txt_wrap .txt {color: var(--text-color-900); font-size: 20px; line-height: 40px;}
+.main_banner .txt_wrap .check_line {text-decoration: line-through;}
+.main_banner .btn_wrap {display: flex; gap: 0 15px;}
+.main_banner .btn_wrap button {border: none; height: 100%; width: 40px; background: none; transition: all 0.5s;}
+.main_banner .btn_wrap .check_btn:hover {background: var(--primary-color);}
+.main_banner .btn_wrap .delete_btn:hover {background: var(--secondary-color);}
+
+/* 태블릿 */
+@media (max-width:1024px) {
+  .main_banner .logo h3 {font-size: 38px;}
+  .main_banner .add_wrap input {width: 80%; height: 40px;}
+  .main_banner .add_wrap .add_btn {width: 50px; height: 40px;}
+}
+
+/* 모바일 */
+@media (max-width:767px) {
+  .main_banner .inner {padding: 0 10px;}
+  .main_banner .logo h3 {font-size: 33px;}
+  .main_banner .add_area {margin-top: 10px;}
+  .main_banner .add_wrap input {height: 30px;}
+  .main_banner .add_wrap .add_btn {margin-left: 10px; width: 40px; height: 30px;}
+}
