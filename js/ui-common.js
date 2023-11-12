@@ -76,7 +76,7 @@ function checkBtn(id) {
       break;
     }
   }
-  render();
+  filter();
 }
 
 function deleteBtn(id) {
@@ -85,11 +85,13 @@ function deleteBtn(id) {
       textList.splice(i, 1);
     }
   }
-  render();
+  filter();
 }
 
 function filter(event) {
+  if(event) {
   menu = event.target.id;
+  }
   filterList = [];
   if (menu === 'ongoing') {
     for (let i = 0; i < textList.length; i++) {
