@@ -28,8 +28,6 @@
 .main_banner .txt_wrap .check_line {text-decoration: line-through;}
 .main_banner .btn_wrap {display: flex; gap: 0 15px;}
 .main_banner .btn_wrap button {border: none; height: 100%; width: 40px; background: none; transition: all 0.5s;}
-.main_banner .btn_wrap .check_btn:hover {background: var(--primary-color);}
-.main_banner .btn_wrap .delete_btn:hover {background: var(--secondary-color);}
 
 /* 태블릿 */
 @media (max-width:1024px) {
