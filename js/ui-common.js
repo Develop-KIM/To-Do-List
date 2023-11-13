@@ -9,24 +9,25 @@
 // 완료 탭은 끝난 아이템만, 진행중인 탭은 진행중인 아이템만
 // 전체 탭을 누르면 다시 전체아이템으로 돌아옴
 
-let userInput = document.querySelector('.user_input');
-let addBtn = document.querySelector('.add_btn');
-let tabs = document.querySelectorAll('.menu_btn button');
-let textList = [];
-let menu = 'all';
-let filterList = [];
+var userInput = document.querySelector('.user_input');
+var addBtn = document.querySelector('.add_btn');
+var tabs = document.querySelectorAll('.menu_btn button');
+var textList = [];
+var menu = 'all';
+var filterList = [];
 
 addBtn.addEventListener('click', userBtn);
 
-for (let i = 0; i < tabs.length; i++) {
+for (var i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', function (event) {
     filter(event);
   });
 }
 
 // 버튼을 누르면 userInput 값
-function userBtn() {
-  let text = {
+function userBtn(e) {
+  e.preventDefault()
+  var text = {
     id: randomIDGenerate(),
     textContent: userInput.value,
     isComplete: false,
@@ -37,8 +38,8 @@ function userBtn() {
 
 // 오늘 할 일 출력
 function render() {
-  let resultHTML = '';
-  let list = [];
+  var resultHTML = '';
+  var list = [];
 
   if (menu === 'all') {
     list = textList;
@@ -46,7 +47,7 @@ function render() {
     list = filterList;
   }
 
-  for (let i = 0; i < list.length; i++) {
+  for (var i = 0; i < list.length; i++) {
     if (list[i].isComplete) {
       resultHTML += `<div class="txt_wrap">
       <div class="txt check_line">${list[i].textContent}</div>
@@ -70,7 +71,7 @@ function render() {
 }
 
 function checkBtn(id) {
-  for (let i = 0; i < textList.length; i++) {
+  for (var i = 0; i < textList.length; i++) {
     if (textList[i].id === id) {
       textList[i].isComplete = !textList[i].isComplete;
       break;
@@ -80,7 +81,7 @@ function checkBtn(id) {
 }
 
 function deleteBtn(id) {
-  for (let i = 0; i < textList.length; i++) {
+  for (var i = 0; i < textList.length; i++) {
     if (textList[i].id === id) {
       textList.splice(i, 1);
     }
@@ -94,13 +95,13 @@ function filter(event) {
   }
   filterList = [];
   if (menu === 'ongoing') {
-    for (let i = 0; i < textList.length; i++) {
+    for (var i = 0; i < textList.length; i++) {
       if (textList[i].isComplete === false) {
         filterList.push(textList[i]);
       }
     }
   } else if (menu === 'done') {
-    for (let i = 0; i < textList.length; i++) {
+    for (var i = 0; i < textList.length; i++) {
       if (textList[i].isComplete) {
         filterList.push(textList[i]);
       }
